@@ -47,4 +47,4 @@ Open `http://localhost:3000` in multiple browser tabs to test.
 
 ## Deployment
 
-Deployed on [Railway](https://railway.app)
+Deployed on [Railway](https://guessing-game-production-05ea.up.railway.app/)
