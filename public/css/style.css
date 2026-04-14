@@ -328,4 +328,11 @@ input:focus { border-color: var(--text); box-shadow: 0 0 0 3px rgba(26,26,26,0.0
   .msg {
     max-width: 92%;
   }
+
+  #chat-row,
+  #guess-row {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+  }
 }
