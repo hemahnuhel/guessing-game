@@ -284,6 +284,7 @@ input:focus { border-color: var(--text); box-shadow: 0 0 0 3px rgba(26,26,26,0.0
 @media (max-width: 600px) {
   #game-screen {
     flex-direction: column;
+    height: 100vh;
   }
 
   .sidebar {
@@ -296,6 +297,7 @@ input:focus { border-color: var(--text); box-shadow: 0 0 0 3px rgba(26,26,26,0.0
     border-right: none;
     border-bottom: 1px solid var(--border);
     overflow-y: unset;
+    flex-shrink: 0;
   }
 
   .sidebar > * {
@@ -304,6 +306,20 @@ input:focus { border-color: var(--text); box-shadow: 0 0 0 3px rgba(26,26,26,0.0
   }
 
   .sidebar-logo { display: none; }
+
+  .main-area {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .chat-area {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+  }
 
   .master-fields {
     flex-direction: column;
@@ -316,6 +332,7 @@ input:focus { border-color: var(--text); box-shadow: 0 0 0 3px rgba(26,26,26,0.0
 
   .input-row {
     padding: 10px 12px;
+    flex-shrink: 0;
   }
 
   .question-banner {
@@ -323,16 +340,10 @@ input:focus { border-color: var(--text); box-shadow: 0 0 0 3px rgba(26,26,26,0.0
     align-items: flex-start;
     gap: 4px;
     padding: 10px 12px;
+    flex-shrink: 0;
   }
 
   .msg {
     max-width: 92%;
-  }
-
-  #chat-row,
-  #guess-row {
-    position: sticky;
-    bottom: 0;
-    z-index: 10;
   }
 }
