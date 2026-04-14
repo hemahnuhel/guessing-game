@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guess It</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<div id="app">
+
+  <!-- Landing -->
+  <div id="landing-screen" class="screen active">
+    <div class="landing-title">Guess It</div>
+    <div class="landing-rule"></div>
+    <div class="landing-card">
+      <div class="card-tabs">
+        <button class="tab-btn active" data-tab="create-tab">Create</button>
+        <button class="tab-btn" data-tab="join-tab">Join</button>
+      </div>
+      <div id="create-tab" class="tab-content active">
+        <div>
+          <label for="create-username">Username</label>
+          <input id="create-username" type="text" placeholder="enter username" maxlength="24" autocomplete="off" />
+        </div>
+        <button id="create-btn" class="btn btn-primary">Create Session</button>
+      </div>
+      <div id="join-tab" class="tab-content">
+        <div>
+          <label for="join-username">Username</label>
+          <input id="join-username" type="text" placeholder="enter username" maxlength="24" autocomplete="off" />
+        </div>
+        <div>
+          <label for="join-session-id">Session ID</label>
+          <input id="join-session-id" type="text" placeholder="paste session id" autocomplete="off" />
+        </div>
+        <button id="join-btn" class="btn btn-primary">Join Session</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game -->
+  <div id="game-screen" class="screen">
+    <aside class="sidebar">
+      <div class="sidebar-logo">Guess It</div>
+      <div>
+        <div class="section-label">Session</div>
+        <div id="session-id-display" class="session-id-box" title="Click to copy">—</div>
+      </div>
+      <div id="timer-box" class="timer-box hidden">
+        <div class="section-label">Time Remaining</div>
+        <span id="timer-number" class="timer-number">60</span>
+      </div>
+      <div>
+        <div class="section-label">Players</div>
+        <div id="players-list" class="players-list"></div>
+      </div>
+    </aside>
+
+    <div class="main-area">
+      <div class="status-bar">
+        <div id="status-dot" class="status-dot lobby"></div>
+        <span id="status-label">Lobby</span>
+      </div>
+      <div id="question-banner" class="question-banner hidden">
+        <span class="question-label">Question</span>
+        <span id="question-text" class="question-text">—</span>
+      </div>
+      <div id="chat-area" class="chat-area"></div>
+      <div id="attempts-bar" class="attempts-bar hidden"></div>
+      <div id="guess-row" class="input-row hidden">
+        <input id="guess-input" type="text" placeholder="enter your guess…" maxlength="100" autocomplete="off" />
+        <button id="send-guess-btn" class="btn btn-success">Submit</button>
+      </div>
+      <div id="chat-row" class="input-row">
+        <input id="chat-input" type="text" placeholder="say something…" maxlength="300" autocomplete="off" />
+        <button id="send-msg-btn" class="btn btn-secondary">Send</button>
+      </div>
+      <div id="master-panel" class="master-panel hidden">
+        <div class="master-panel-title">Game Master</div>
+        <div class="master-fields">
+          <input id="q-input" type="text" placeholder="question for players…" maxlength="200" />
+          <input id="a-input" type="text" placeholder="answer (secret)" maxlength="100" />
+          <button id="set-q-btn" class="btn btn-secondary">Set</button>
+        </div>
+        <div class="master-controls">
+          <button id="start-game-btn" class="btn btn-primary" disabled>Start Game</button>
+          <span id="master-hint" class="master-hint">Set a question first</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div id="toast"></div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/client.js"></script>
+</body>
+</html>
